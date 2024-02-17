@@ -10,7 +10,8 @@
 		9D0593252B7ED418002D3427 /* PomoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0593242B7ED418002D3427 /* PomoAppApp.swift */; };
 		9D0593292B7ED41A002D3427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0593282B7ED41A002D3427 /* Assets.xcassets */; };
 		9D05932C2B7ED41A002D3427 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D05932B2B7ED41A002D3427 /* Preview Assets.xcassets */; };
-		9DFEDC682B7F0AC900B7DED7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEDC672B7F0AC900B7DED7 /* MainView.swift */; };
+		9DFEDC6E2B7F373C00B7DED7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEDC6D2B7F373C00B7DED7 /* MainViewModel.swift */; };
+		9DFEDC722B7F3A6B00B7DED7 /* MainViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEDC712B7F3A6B00B7DED7 /* MainViewA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +19,8 @@
 		9D0593242B7ED418002D3427 /* PomoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoAppApp.swift; sourceTree = "<group>"; };
 		9D0593282B7ED41A002D3427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D05932B2B7ED41A002D3427 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9DFEDC672B7F0AC900B7DED7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9DFEDC6D2B7F373C00B7DED7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9DFEDC712B7F3A6B00B7DED7 /* MainViewA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,8 @@
 		9D0593232B7ED418002D3427 /* PomoApp */ = {
 			isa = PBXGroup;
 			children = (
-				9DFEDC672B7F0AC900B7DED7 /* MainView.swift */,
+				9DFEDC6D2B7F373C00B7DED7 /* MainViewModel.swift */,
+				9DFEDC712B7F3A6B00B7DED7 /* MainViewA.swift */,
 				9D0593242B7ED418002D3427 /* PomoAppApp.swift */,
 				9D0593282B7ED41A002D3427 /* Assets.xcassets */,
 				9D05932A2B7ED41A002D3427 /* Preview Content */,
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DFEDC682B7F0AC900B7DED7 /* MainView.swift in Sources */,
 				9D0593252B7ED418002D3427 /* PomoAppApp.swift in Sources */,
+				9DFEDC6E2B7F373C00B7DED7 /* MainViewModel.swift in Sources */,
+				9DFEDC722B7F3A6B00B7DED7 /* MainViewA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

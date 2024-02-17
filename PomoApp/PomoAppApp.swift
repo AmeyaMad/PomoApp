@@ -11,7 +11,7 @@ import SwiftUI
 struct PomoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainViewA()
         }
     }
 }
