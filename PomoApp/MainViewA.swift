@@ -11,7 +11,7 @@ let lineWidth: CGFloat = 30
 
 struct MainViewA: View {
     @StateObject private var vm = ViewModel()
-    @State private var showingSheet = false
+    @State public var showingSheet = false
     @State private var mode: String = "Focus"
     @State private var image: String = "brain.filled.head.profile"
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -31,8 +31,8 @@ struct MainViewA: View {
                     .stroke(Color.gray.opacity(0.2), style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
                 
                 Circle()
-                    .trim(from: 0,
-                          to: 1 - (vm.elapsedSeconds/vm.totalSeconds))
+                    .trim(from: (vm.elapsedSeconds/vm.totalSeconds),
+                          to: 1)
                     .stroke(Color.green, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
                     .rotationEffect(.degrees(-90))
                     .animation(.easeInOut, value: vm.isActive)
@@ -84,7 +84,7 @@ struct MainViewA: View {
                             showingSheet.toggle()
                         })
                         .sheet(isPresented: $showingSheet){
-                            ChangeSheetViewA(vm: vm)
+                            ChangeSheetViewA(vm: vm, showingSheet: $showingSheet)
                         }.padding()
                     
                 }
@@ -110,6 +110,7 @@ struct MainViewA: View {
 
 struct ChangeSheetViewA: View {
     @ObservedObject var vm: ViewModel
+    @Binding var showingSheet: Bool
 
     var body: some View {
         VStack{
@@ -121,17 +122,26 @@ struct ChangeSheetViewA: View {
                 .multilineTextAlignment(.center)
         
             Label("\(vm.time)", systemImage: "clock.arrow.2.circlepath")
-                .font(.title)
+                .font(.largeTitle)
                 .padding()
             Slider(value: $vm.minutes, in: 0...60, step: 5)
                 .padding()
                 .frame(width: 300)
                 .animation(.easeInOut, value: vm.minutes)
             
+            Label("Set Time", systemImage: "checkmark.circle.fill")
+                .font(.title)
+                .foregroundStyle(.green)
+                .padding()
+                .onTapGesture(perform: {
+                    self.showingSheet = false
+                })
+                
         }
-       
     }
+       
 }
+
 
 
 #Preview {
