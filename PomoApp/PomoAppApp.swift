@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PomoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            MainViewA()
+            RootView()
+                .modelContainer(for: TodoItem.self)
         }
     }
 }
