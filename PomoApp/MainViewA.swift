@@ -38,7 +38,7 @@ struct MainViewA: View {
                     .animation(.easeInOut, value: vm.isActive)
             
                 Text("\(vm.time)")
-                    .font(.largeTitle)
+                    .font(.largeTitle).monospacedDigit().contentTransition(.numericText(countsDown: true))
                     .padding()
                     .frame(width: width)
                     .alert("Timer Done!", isPresented: $vm.showingAlert) {
@@ -103,7 +103,9 @@ struct MainViewA: View {
                 
             }
         }.onReceive(timer) { _ in
-            vm.updateCountdown()
+            withAnimation{
+                vm.updateCountdown()
+            }
         }
     }
 }
