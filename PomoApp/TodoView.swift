@@ -6,20 +6,36 @@
 //
 
 import SwiftUI
+import SwiftData
 
 
 struct TodoView: View {
     @State private var showingSheet = false
+    
+    @Environment(\.modelContext) private var context
+    
+    @Query private var items: [TodoItem]
+    
     var body: some View {
-        Button("Add a Task!"){
-            showingSheet = true
-        }
-        .foregroundStyle(.purple)
-        .sheet(isPresented: $showingSheet){
-            CreateTodoView()
-                .presentationDetents([.fraction(0.3)])
-                .presentationDragIndicator(.visible)
-        }
+        VStack{
+            Button("Add a Task!"){
+                showingSheet = true
+            }
+            .foregroundStyle(.purple)
+            .sheet(isPresented: $showingSheet){
+                CreateTodoView()
+                    .presentationDetents([.fraction(0.3)])
+                    .presentationDragIndicator(.visible)
+            }
+            
+            
+            List{
+                Text("hello")
+                ForEach (items) { item in
+                    Text(item.title)
+                }
+            }
+        }.padding()
     }
 }
 
