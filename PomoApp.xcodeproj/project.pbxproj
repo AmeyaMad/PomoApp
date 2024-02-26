@@ -10,6 +10,9 @@
 		9D0593252B7ED418002D3427 /* PomoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0593242B7ED418002D3427 /* PomoAppApp.swift */; };
 		9D0593292B7ED41A002D3427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0593282B7ED41A002D3427 /* Assets.xcassets */; };
 		9D05932C2B7ED41A002D3427 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D05932B2B7ED41A002D3427 /* Preview Assets.xcassets */; };
+		9D1725822B8AB4FF006A97D6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEDC6D2B7F373C00B7DED7 /* MainViewModel.swift */; };
+		9D1725842B8C361D006A97D6 /* MenuBarMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1725832B8C361D006A97D6 /* MenuBarMainView.swift */; };
+		9D1725852B8C3720006A97D6 /* MainViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEDC712B7F3A6B00B7DED7 /* MainViewA.swift */; };
 		9DD84A5E2B8AAD73004A35A4 /* PomoAppMenuBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD84A5D2B8AAD73004A35A4 /* PomoAppMenuBarApp.swift */; };
 		9DD84A602B8AAD73004A35A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD84A5F2B8AAD73004A35A4 /* ContentView.swift */; };
 		9DD84A622B8AAD75004A35A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD84A612B8AAD75004A35A4 /* Assets.xcassets */; };
@@ -19,7 +22,6 @@
 		9DD8B43B2B86E87D008A57C1 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD8B43A2B86E87D008A57C1 /* TodoItem.swift */; };
 		9DD8B43D2B86EB04008A57C1 /* CreateTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD8B43C2B86EB04008A57C1 /* CreateTodoView.swift */; };
 		9DFEDC6E2B7F373C00B7DED7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEDC6D2B7F373C00B7DED7 /* MainViewModel.swift */; };
-		9DFEDC722B7F3A6B00B7DED7 /* MainViewA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEDC712B7F3A6B00B7DED7 /* MainViewA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,7 @@
 		9D0593242B7ED418002D3427 /* PomoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoAppApp.swift; sourceTree = "<group>"; };
 		9D0593282B7ED41A002D3427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D05932B2B7ED41A002D3427 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9D1725832B8C361D006A97D6 /* MenuBarMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMainView.swift; sourceTree = "<group>"; };
 		9DD84A5B2B8AAD73004A35A4 /* PomoAppMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoAppMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD84A5D2B8AAD73004A35A4 /* PomoAppMenuBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoAppMenuBarApp.swift; sourceTree = "<group>"; };
 		9DD84A5F2B8AAD73004A35A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 		9DD84A5C2B8AAD73004A35A4 /* PomoAppMenuBar */ = {
 			isa = PBXGroup;
 			children = (
+				9D1725832B8C361D006A97D6 /* MenuBarMainView.swift */,
 				9DD84A5D2B8AAD73004A35A4 /* PomoAppMenuBarApp.swift */,
 				9DD84A5F2B8AAD73004A35A4 /* ContentView.swift */,
 				9DD84A612B8AAD75004A35A4 /* Assets.xcassets */,
@@ -227,7 +231,7 @@
 				9DD8B4392B86E6A9008A57C1 /* TodoView.swift in Sources */,
 				9DFEDC6E2B7F373C00B7DED7 /* MainViewModel.swift in Sources */,
 				9DD8B43B2B86E87D008A57C1 /* TodoItem.swift in Sources */,
-				9DFEDC722B7F3A6B00B7DED7 /* MainViewA.swift in Sources */,
+				9D1725852B8C3720006A97D6 /* MainViewA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,8 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1725842B8C361D006A97D6 /* MenuBarMainView.swift in Sources */,
 				9DD84A602B8AAD73004A35A4 /* ContentView.swift in Sources */,
 				9DD84A5E2B8AAD73004A35A4 /* PomoAppMenuBarApp.swift in Sources */,
+				9D1725822B8AB4FF006A97D6 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

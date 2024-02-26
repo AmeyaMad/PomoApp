@@ -1,14 +1,14 @@
 //
-//  MainViewA.swift
+//  MenuBarMainView.swift
 //  PomoApp
 //
-//  Created by Ameya Madhugiri on 2/15/24.
+//  Created by Ameya Madhugiri on 2/25/24.
 //
 
 import SwiftUI
-let lineWidth: CGFloat = 30
+let menuLineWidth: CGFloat = 20
 
-struct MainViewA: View {
+struct MenuBarMainView: View {
     @StateObject private var vm = ViewModel()
     @State public var showingSheet = false
     @State private var mode: String = "Focus"
@@ -25,17 +25,15 @@ struct MainViewA: View {
                 .font(.title)
                 .bold()
                 .padding()
-                .padding(.bottom)
-                .padding(.bottom)
             
             ZStack{
                 Circle()
-                    .stroke(Color.gray.opacity(0.2), style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
+                    .stroke(Color.gray.opacity(0.2), style: StrokeStyle(lineWidth: menuLineWidth, lineCap: .round))
                 
                 Circle()
                     .trim(from: (vm.elapsedSeconds/vm.totalSeconds),
                           to: 1)
-                    .stroke(Color.green, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
+                    .stroke(Color.green, style: StrokeStyle(lineWidth: menuLineWidth, lineCap: .round))
                     .rotationEffect(.degrees(-90))
                     .animation(.easeInOut, value: vm.isActive)
             
@@ -66,12 +64,9 @@ struct MainViewA: View {
                             }
                         }
                     }
-            }.frame( width: UIScreen.main.bounds.height * 0.3, height: UIScreen.main.bounds.height * 0.3)
+            }.frame( width: 170, height: 170)
                 .padding()
-                .padding(.top)
-                .padding(.top)
-                .padding(.bottom)
-                .padding(.bottom)
+            
             
             HStack {
             label: do {
@@ -89,9 +84,10 @@ struct MainViewA: View {
                         .onTapGesture( perform: {
                             showingSheet.toggle()
                         })
-                        .sheet(isPresented: $showingSheet){
-                            ChangeSheetViewA(vm: vm, showingSheet: $showingSheet)
+                        .popover(isPresented: $showingSheet){
+                            MenuBarChangeSheetView(vm: vm, showingSheet: $showingSheet)
                         }.padding()
+                        
                     
                 }
                 
@@ -108,11 +104,6 @@ struct MainViewA: View {
             }
                 
             }.padding()
-             .padding(.bottom)
-             .padding(.bottom)
-             .padding(.top)
-             .padding(.top)
-            
         }.onReceive(timer) { _ in
             withAnimation{
                 vm.updateCountdown()
@@ -121,7 +112,7 @@ struct MainViewA: View {
     }
 }
 
-struct ChangeSheetViewA: View {
+struct MenuBarChangeSheetView: View {
     @ObservedObject var vm: ViewModel
     @Binding var showingSheet: Bool
 
@@ -150,13 +141,11 @@ struct ChangeSheetViewA: View {
                     self.showingSheet = false
                 })
                 
-        }
+        }.frame(width: 300, height: 150)
     }
        
 }
 
-
-
 #Preview {
-    MainViewA()
+    MenuBarMainView()
 }

@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct PomoAppMenuBarApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+        MenuBarExtra("PomoBar", systemImage: "hand.thumbsup.fill"){
+            MenuBarMainView().frame(width: 350, height: 400)
+        }.menuBarExtraStyle(.window)
+            
     }
 }
